@@ -14,7 +14,7 @@ type SliderElement = {
 const elements: SliderElement[] = [
   {
     id: 1,
-    img: "vodka-ketelone.png",
+    img: "bottle-1.jpg",
     name: "Bottle",
     description:
       "A crisp, smooth taste with a splash of citrus and long finish",
@@ -23,7 +23,7 @@ const elements: SliderElement[] = [
   },
   {
     id: 2,
-    img: "#",
+    img: "bottle-2.png",
     name: "Bottle",
     description:
       "A crisp, smooth taste with a splash of citrus and long finish",
@@ -32,7 +32,7 @@ const elements: SliderElement[] = [
   },
   {
     id: 3,
-    img: "#",
+    img: "bottle-3.jpg",
     name: "Bottle",
     description:
       "A crisp, smooth taste with a splash of citrus and long finish",
@@ -73,11 +73,11 @@ function Slider() {
       </button>
       <div className="wrapper w-[100%] mx-auto overflow-hidden">
         <ul
-          className={`flex justify-center w-[100%] mx-auto duration-300 ease-in-out translate-x-0`}
+          className={`flex justify-center items-center w-[100%] mx-auto duration-300 ease-in-out translate-x-0`}
           style={{ translate: `${50 - activeElementIndex * 50}%` }}>
           {elements.map(({ id, name, img, description, infoLink, buyLink }) => (
             <li key={id} className="flex flex-col items-center min-w-[50%]">
-              <img src={img} alt={name} className="h-80 block" />
+              <img src={img} alt={name} className="h-96 mb-10" />
 
               {elements[activeElementIndex].id === id && (
                 <div className="text-center">

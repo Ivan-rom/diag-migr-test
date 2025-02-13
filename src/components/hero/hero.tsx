@@ -1,7 +1,17 @@
+import Image from "next/image";
+import second from "../../../public/hero.jpg";
+
 function Hero() {
   return (
-    <section className="flex flex-col items-center mb-40 bg-lime-100">
-      <h1 className="text-5xl font-bold pt-36 pb-72">Welkom to Cocktail</h1>
+    <section className="flex flex-col items-center mb-40 relative">
+      <Image
+        src={second}
+        alt="Background image"
+        className="absolute -z-10 top-0 left-0 h-[750px]"
+      />
+      <h1 className="text-7xl font-bold pt-36 pb-72 text-white">
+        Welkom to Cocktail
+      </h1>
       <form
         action="#"
         className="bg-red-700 text-white p-10 flex flex-col items-center gap-5 translate-y-24">
