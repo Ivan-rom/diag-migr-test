@@ -61,17 +61,30 @@ function Slider() {
   }
 
   return (
-    <div>
-      <button onClick={prevElementHandler}>left</button>
-      <div>
-        <ul className="flex justify-between">
+    <div className="flex items-center">
+      <button
+        onClick={prevElementHandler}
+        className="absolute left-1/3 z-10 p-5 rounded-full border border-black">
+        <img
+          src="/arrow-curved.svg"
+          alt="left"
+          className="rotate-180 size-10"
+        />
+      </button>
+      <div className="wrapper w-[90%] mx-auto overflow-hidden">
+        <ul
+          className={`flex justify-between w-[100%] duration-300 ease-linear translate-x-[-${
+            activeElementIndex * 100
+          }%]`}>
           {elements.map(({ id, name, img, description, infoLink, buyLink }) => (
-            <li key={id} className="flex flex-col items-center">
+            <li key={id} className="flex flex-col items-center min-w-[100%]">
               <img src={img} alt={name} className="h-80 block" />
 
               {elements[activeElementIndex].id === id && (
                 <div className="text-center">
-                  <h3 className="font-bold text-xl uppercase mb-2">{name}</h3>
+                  <h3 className="font-bold text-xl uppercase mb-2">
+                    {name} {id}
+                  </h3>
                   <p className="mb-6">{description}</p>
                   <div className="flex justify-center gap-3">
                     <a
@@ -91,7 +104,11 @@ function Slider() {
           ))}
         </ul>
       </div>
-      <button onClick={nextElementHandler}>right</button>
+      <button
+        onClick={nextElementHandler}
+        className="absolute right-1/3 z-10 p-5 rounded-full border border-black">
+        <img src="/arrow-curved.svg" alt="right" className="size-10" />
+      </button>
     </div>
   );
 }
