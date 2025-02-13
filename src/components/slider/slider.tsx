@@ -1,0 +1,99 @@
+"use client";
+
+import { useState } from "react";
+
+type SliderElement = {
+  id: number;
+  img: string;
+  name: string;
+  description: string;
+  buyLink: string;
+  infoLink: string;
+};
+
+const elements: SliderElement[] = [
+  {
+    id: 1,
+    img: "#",
+    name: "Bottle",
+    description:
+      "A crisp, smooth taste with a splash of citrus and long finish",
+    buyLink: "#",
+    infoLink: "#",
+  },
+  {
+    id: 2,
+    img: "#",
+    name: "Bottle",
+    description:
+      "A crisp, smooth taste with a splash of citrus and long finish",
+    buyLink: "#",
+    infoLink: "#",
+  },
+  {
+    id: 3,
+    img: "#",
+    name: "Bottle",
+    description:
+      "A crisp, smooth taste with a splash of citrus and long finish",
+    buyLink: "#",
+    infoLink: "#",
+  },
+];
+
+function Slider() {
+  const [activeElementIndex, setActiveElementIndex] = useState<number>(1);
+
+  function prevElementHandler() {
+    if (activeElementIndex === 0) {
+      setActiveElementIndex(elements.length - 1);
+    } else {
+      setActiveElementIndex(activeElementIndex - 1);
+    }
+  }
+
+  function nextElementHandler() {
+    if (activeElementIndex === elements.length - 1) {
+      setActiveElementIndex(0);
+    } else {
+      setActiveElementIndex(activeElementIndex + 1);
+    }
+  }
+
+  return (
+    <div>
+      <button onClick={prevElementHandler}>left</button>
+      <div>
+        <ul className="flex justify-between">
+          {elements.map(({ id, name, img, description, infoLink, buyLink }) => (
+            <li key={id} className="flex flex-col items-center">
+              <img src={img} alt={name} className="h-80 block" />
+
+              {elements[activeElementIndex].id === id && (
+                <div className="text-center">
+                  <h3 className="font-bold text-xl uppercase mb-2">{name}</h3>
+                  <p className="mb-6">{description}</p>
+                  <div className="flex justify-center gap-3">
+                    <a
+                      href={buyLink}
+                      className="block px-6 py-3 bg-red-700 text-white">
+                      Where To Buy
+                    </a>
+                    <a
+                      href={infoLink}
+                      className="block px-6 py-3 bg-black text-white">
+                      Learn More
+                    </a>
+                  </div>
+                </div>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <button onClick={nextElementHandler}>right</button>
+    </div>
+  );
+}
+
+export default Slider;
