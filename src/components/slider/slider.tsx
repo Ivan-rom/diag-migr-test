@@ -1,10 +1,15 @@
 "use client";
 
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
+import bottle1 from "../../../public/bottle-1.jpg";
+import bottle2 from "../../../public/bottle-2.png";
+import bottle3 from "../../../public/bottle-3.jpg";
+import arrow from "../../../public/arrow-curved.svg";
 
 type SliderElement = {
   id: number;
-  img: string;
+  img: string | StaticImageData;
   name: string;
   description: string;
   buyLink: string;
@@ -14,7 +19,7 @@ type SliderElement = {
 const elements: SliderElement[] = [
   {
     id: 1,
-    img: "bottle-1.jpg",
+    img: bottle1,
     name: "Bottle",
     description:
       "A crisp, smooth taste with a splash of citrus and long finish",
@@ -23,7 +28,7 @@ const elements: SliderElement[] = [
   },
   {
     id: 2,
-    img: "bottle-2.png",
+    img: bottle2,
     name: "Bottle",
     description:
       "A crisp, smooth taste with a splash of citrus and long finish",
@@ -32,7 +37,7 @@ const elements: SliderElement[] = [
   },
   {
     id: 3,
-    img: "bottle-3.jpg",
+    img: bottle3,
     name: "Bottle",
     description:
       "A crisp, smooth taste with a splash of citrus and long finish",
@@ -65,11 +70,7 @@ function Slider() {
       <button
         onClick={prevElementHandler}
         className="absolute left-[20%] z-10 p-5 rounded-full border border-black">
-        <img
-          src="/arrow-curved.svg"
-          alt="left"
-          className="rotate-180 size-10"
-        />
+        <Image src={arrow} alt="left" className="rotate-180 size-10" />
       </button>
       <div className="wrapper w-[100%] mx-auto overflow-hidden">
         <ul
@@ -77,7 +78,7 @@ function Slider() {
           style={{ translate: `${50 - activeElementIndex * 50}%` }}>
           {elements.map(({ id, name, img, description, infoLink, buyLink }) => (
             <li key={id} className="flex flex-col items-center min-w-[50%]">
-              <img src={img} alt={name} className="h-96 mb-10" />
+              <Image src={img} alt={name} className="size-96 mb-10" />
 
               {elements[activeElementIndex].id === id && (
                 <div className="text-center">
@@ -104,7 +105,7 @@ function Slider() {
       <button
         onClick={nextElementHandler}
         className="absolute right-[20%] z-10 p-5 rounded-full border border-black">
-        <img src="/arrow-curved.svg" alt="right" className="size-10" />
+        <Image src={arrow} alt="right" className="size-10" />
       </button>
     </div>
   );
