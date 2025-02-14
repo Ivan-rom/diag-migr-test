@@ -1,14 +1,6 @@
-import Image from "next/image";
-import second from "../../../public/hero.jpg";
-
 function Hero() {
   return (
-    <section className="flex flex-col items-center mb-40 relative">
-      <Image
-        src={second}
-        alt="Background image"
-        className="absolute -z-10 top-0 left-0 h-[750px]"
-      />
+    <section className='flex flex-col items-center mb-40 relative bg-[url("/hero.jpg")] bg-cover bg-no-repeat bg-center'>
       <h1 className="text-7xl font-bold pt-36 pb-72 text-white">
         Welkom to Cocktail
       </h1>
