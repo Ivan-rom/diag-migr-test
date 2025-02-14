@@ -2,9 +2,9 @@
 
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
-import bottle1 from "../../../public/bottle-1.jpg";
+import bottle1 from "../../../public/bottle-1.png";
 import bottle2 from "../../../public/bottle-2.png";
-import bottle3 from "../../../public/bottle-3.jpg";
+import bottle3 from "../../../public/bottle-3.png";
 import arrow from "../../../public/arrow-curved.svg";
 
 type SliderElement = {
@@ -82,7 +82,11 @@ function Slider() {
           style={{ translate: `${50 - activeElementIndex * 50}%` }}>
           {elements.map(({ id, name, img, description, infoLink, buyLink }) => (
             <li key={id} className="flex flex-col items-center min-w-[50%]">
-              <Image src={img} alt={name} className="size-96 mb-10" />
+              <Image
+                src={img}
+                alt={name}
+                className="size-96 mb-10 drop-shadow-2xl"
+              />
 
               <div
                 className={`text-center duration-300 grid grid-rows-[0fr] opacity-0 ${

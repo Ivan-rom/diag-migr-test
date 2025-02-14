@@ -8,10 +8,10 @@ function Header() {
       <nav className="flex items-center">
         <ul className="flex justify-start gap-10 items-center">
           <li>
-            <a href="#">Home</a>
+            <a href="#home">Home</a>
           </li>
           <li>
-            <a href="#">Products</a>
+            <a href="#products">Products</a>
           </li>
           <li>
             <a href="#">Cocktails</a>
@@ -28,8 +28,10 @@ function Header() {
         <Image src={blured} alt="#" className="mx-auto w-16" />
       </div>
       <div className="flex justify-end gap-10 items-center">
-        <a href="#">Where To Find Us</a>
-        <a href="#">
+        <a href="#" className="shrink-1">
+          Where To Find Us
+        </a>
+        <a href="#" className="shrink-0">
           <Image src={logo} alt="logo" className="size-8" />
         </a>
       </div>

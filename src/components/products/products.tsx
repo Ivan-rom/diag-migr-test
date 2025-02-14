@@ -2,7 +2,7 @@ import Slider from "../slider/slider";
 
 function Products() {
   return (
-    <section className="bg-lime-100">
+    <section id="products" className="bg-lime-100">
       <div className="flex justify-between p-20 pb-5 items-center">
         <h2 className="font-bold text-4xl">Our products</h2>
         <p className="font-thin">
