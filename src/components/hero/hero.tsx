@@ -1,7 +1,7 @@
 function Hero() {
   return (
-    <section className='flex flex-col items-center mb-40 relative bg-[url("/hero.jpg")] bg-cover bg-no-repeat bg-center'>
-      <h1 className="text-7xl font-bold pt-36 pb-72 text-white">
+    <section className='flex flex-col items-center mb-40 relative bg-[url("/hero.jpg")] bg-cover bg-no-repeat bg-top'>
+      <h1 className="text-7xl font-bold pt-36 pb-72 text-white text-center">
         Welkom to Cocktail
       </h1>
       <form
